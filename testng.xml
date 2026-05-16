@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Ecommerce_Automation_Suite">
+
+    <test name="AutomationTest">
+
+        <packages>
+            <package name="YOUR_PACKAGE_NAME"/>
+        </packages>
+
+    </test>
+
+</suite>
