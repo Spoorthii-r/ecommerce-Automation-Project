@@ -7,13 +7,11 @@ public class GetUserAPI {
 
     public static Response getUsers() {
 
-        Response response = RestAssured
-                .given()
-                .header("x-api-key",
-                "free_user_3DhZgAmBTPtRtVSxOJoDvC03eMM")
-                .baseUri("https://reqres.in")
-                .when()
-                .get("/api/users?page=2");
+        Response response =
+                RestAssured
+                        .given()
+                        .when()
+                        .get("https://reqres.in/api/users?page=2");
 
         return response;
     }

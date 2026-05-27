@@ -9,14 +9,12 @@ public class BaseTest {
     @Parameters("browser")
 
     @BeforeMethod
+    public void setup() {
 
-    public void setup(String browser) {
-
-        DriverFactory.initDriver(browser);
+        DriverFactory.initDriver("chrome");
     }
 
     @AfterMethod
-
     public void tearDown() {
 
         DriverFactory.quitDriver();

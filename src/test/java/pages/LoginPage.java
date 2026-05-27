@@ -7,9 +7,7 @@ import base.DriverFactory;
 public class LoginPage {
 
     By emailField = By.id("input-email");
-
     By passwordField = By.id("input-password");
-
     By loginButton = By.xpath("//input[@value='Login']");
 
     public void login(String email, String password) {

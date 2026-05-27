@@ -9,24 +9,19 @@ public class ExtentManager {
 
     public static ExtentReports getInstance() {
 
-        if(extent == null) {
+        if (extent == null) {
 
             ExtentSparkReporter reporter =
-                    new ExtentSparkReporter(
-                            "reports/AutomationReport.html");
+                    new ExtentSparkReporter("reports/AutomationReport.html");
 
-            reporter.config().setReportName(
-                    "KRAVIX Automation Report");
-
-            reporter.config().setDocumentTitle(
-                    "Execution Report");
+            reporter.config().setReportName("Automation Report");
+            reporter.config().setDocumentTitle("Execution Report");
 
             extent = new ExtentReports();
 
             extent.attachReporter(reporter);
 
-            extent.setSystemInfo(
-                    "Tester", "Spoorthi");
+            extent.setSystemInfo("Tester", "Spoorthi");
         }
 
         return extent;

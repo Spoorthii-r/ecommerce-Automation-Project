@@ -1,11 +1,12 @@
 package utils;
 
-import base.DriverFactory;
+import java.io.File;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import java.io.File;
+import base.DriverFactory;
 
 public class ScreenshotUtils {
 
@@ -16,11 +17,13 @@ public class ScreenshotUtils {
             File source =
                     ((TakesScreenshot)
                             DriverFactory.getDriver())
-                            .getScreenshotAs(OutputType.FILE);
+                                    .getScreenshotAs(OutputType.FILE);
 
             File destination =
-                    new File("screenshots/"
-                            + screenshotName + ".png");
+                    new File(
+                            "screenshots/"
+                                    + screenshotName
+                                    + ".png");
 
             FileUtils.copyFile(source, destination);
 

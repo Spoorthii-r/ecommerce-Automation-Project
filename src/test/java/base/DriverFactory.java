@@ -1,56 +1,32 @@
 package base;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverFactory {
 
-    public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    public static WebDriver driver;
 
     public static void initDriver(String browser) {
 
-        try {
+        if (browser.equalsIgnoreCase("chrome")) {
 
-            if(browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
 
-                driver.set(new RemoteWebDriver(
-                        new URL("http://localhost:4444"),
-                        new ChromeOptions()));
-
-            }
-
-            else if(browser.equalsIgnoreCase("firefox")) {
-
-                driver.set(new RemoteWebDriver(
-                        new URL("http://localhost:4444"),
-                        new FirefoxOptions()));
-            }
-
-        } catch (MalformedURLException e) {
-
-            e.printStackTrace();
+            driver.manage().window().maximize();
         }
-
-        getDriver().manage().window().maximize();
     }
 
     public static WebDriver getDriver() {
 
-        return driver.get();
+        return driver;
     }
 
     public static void quitDriver() {
 
-        if(getDriver() != null) {
+        if (driver != null) {
 
-            getDriver().quit();
-
-            driver.remove();
+            driver.quit();
         }
     }
 }

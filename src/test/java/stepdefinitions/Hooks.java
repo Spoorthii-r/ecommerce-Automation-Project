@@ -6,15 +6,12 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 
-    @Before
+	@Before
+	public void setup() {
 
-    public void setup() {
-
-        DriverFactory.initDriver();
-    }
-
+	    DriverFactory.initDriver("chrome");
+	}
     @After
-
     public void tearDown() {
 
         DriverFactory.quitDriver();

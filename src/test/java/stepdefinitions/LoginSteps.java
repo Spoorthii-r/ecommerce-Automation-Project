@@ -1,10 +1,8 @@
 package stepdefinitions;
 
-import org.testng.Assert;
-
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
 
 import pages.HomePage;
 import pages.LoginPage;
@@ -32,14 +30,13 @@ public class LoginSteps {
 
         loginPage.login(
                 "test@test.com",
-                "123456");
+                "password123"
+        );
     }
 
     @Then("User should login successfully")
-    public void verify_login_success() {
+    public void verify_login() {
 
         System.out.println("Login successful");
-
-        Assert.assertTrue(true);
     }
 }

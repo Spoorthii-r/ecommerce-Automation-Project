@@ -1,9 +1,9 @@
 package utils;
 
+import java.io.FileInputStream;
+
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import java.io.FileInputStream;
 
 public class ExcelUtils {
 
@@ -19,7 +19,8 @@ public class ExcelUtils {
 
             XSSFSheet sheet = workbook.getSheet("Sheet1");
 
-            String data = sheet.getRow(row).getCell(col).toString();
+            String data =
+                    sheet.getRow(row).getCell(col).toString();
 
             workbook.close();
 

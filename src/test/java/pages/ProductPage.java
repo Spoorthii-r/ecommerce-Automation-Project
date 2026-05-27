@@ -2,51 +2,21 @@ package pages;
 
 import org.openqa.selenium.By;
 
-import base.BasePage;
+import base.DriverFactory;
 
-public class ProductPage extends BasePage {
+public class ProductPage {
 
-    private By searchBox =
-            By.name("search");
-
-    private By searchBtn =
-            By.xpath("//button[@class='btn btn-default btn-lg']");
-
-    private By firstProduct =
-            By.linkText("MacBook");
-
-    private By addToCartBtn =
-            By.id("button-cart");
-
-    private By successMsg =
-            By.xpath("//div[contains(@class,'alert-success')]");
+    By searchBox = By.name("search");
+    By searchButton = By.xpath("//button[@class='btn btn-default btn-lg']");
 
     public void searchProduct(String productName) {
 
-        driver.findElement(searchBox).clear();
+        DriverFactory.getDriver()
+                .findElement(searchBox)
+                .sendKeys(productName);
 
-        driver.findElement(searchBox)
-              .sendKeys(productName);
-
-        driver.findElement(searchBtn)
-              .click();
-    }
-
-    public void selectFirstProduct() {
-
-        driver.findElement(firstProduct)
-              .click();
-    }
-
-    public void addToCart() {
-
-        driver.findElement(addToCartBtn)
-              .click();
-    }
-
-    public String getSuccessMessage() {
-
-        return driver.findElement(successMsg)
-                     .getText();
+        DriverFactory.getDriver()
+                .findElement(searchButton)
+                .click();
     }
 }

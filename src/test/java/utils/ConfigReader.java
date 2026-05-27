@@ -13,7 +13,7 @@ public class ConfigReader {
 
             FileInputStream fis =
                     new FileInputStream(
-                    "src/test/resources/config.properties");
+                            "src/test/resources/config.properties");
 
             prop = new Properties();
 

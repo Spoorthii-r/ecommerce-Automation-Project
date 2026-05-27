@@ -7,7 +7,6 @@ import base.DriverFactory;
 public class HomePage {
 
     By myAccount = By.xpath("//span[text()='My Account']");
-
     By loginLink = By.linkText("Login");
 
     public void navigateToLogin() {

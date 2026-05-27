@@ -7,14 +7,13 @@ import base.DriverFactory;
 
 public class LoginTest extends BaseTest {
 
-	@Test
+    @Test
+    public void googleTest() throws InterruptedException {
 
-	public void googleTest() throws InterruptedException {
+        DriverFactory.getDriver().get("https://www.google.com");
 
-	    DriverFactory.getDriver().get("https://www.google.com");
+        System.out.println("Google opened successfully");
 
-	    System.out.println("Google opened successfully");
-
-	    Thread.sleep(10000);
-	}
+        Thread.sleep(5000);
+    }
 }
