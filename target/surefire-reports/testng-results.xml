@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-05-16T18:43:36 IST" name="Ecommerce_Automation_Suite" finished-at="2026-05-16T18:43:36 IST" duration-ms="14">
+    <groups>
+    </groups>
+    <test started-at="2026-05-16T18:43:36 IST" name="AutomationTest" finished-at="2026-05-16T18:43:36 IST" duration-ms="14">
+    </test> <!-- AutomationTest -->
+  </suite> <!-- Ecommerce_Automation_Suite -->
+</testng-results>
